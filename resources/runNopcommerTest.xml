@@ -3,32 +3,11 @@
 <suite name="NopCommerce">
   	
 	<test name="run on Firefox">
-  		<parameter name="browser" value="firefox" />
 		<classes>
-			<class name="javaBasic.Topic_07_Switch_Case"/>
+			<class name="com.nopcommerce.user.Level_02_Apply_BasePage_03"/>
 		</classes>
   	</test>
-  	
-  	<test name="run on Chrome">
-  		<parameter name="browser" value="chrome" />
-		<classes>
-			<class name="javaBasic.Topic_07_Switch_Case"/>
-		</classes>
-  	</test>
-  	
-  	<test name="run on Edge">
-  		<parameter name="browser" value="edge" />
-		<classes>
-			<class name="javaBasic.Topic_07_Switch_Case"/>
-		</classes>
-  	</test>
-  	
-<!--   	<test name="run on IE"> -->
-<!--   		<parameter name="browser" value="IE" /> -->
-<!-- 		<classes> -->
-<!-- 			<class name="javaBasic.Topic_07_Switch_Case"/> -->
-<!-- 		</classes> -->
-<!--   	</test> -->
+
  
  
   	 

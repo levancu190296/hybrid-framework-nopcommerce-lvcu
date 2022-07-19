@@ -17,6 +17,10 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
+	
+	public static BasePage getBasePageObject() {
+		return new BasePage();
+	}
 
 	public void openPageUrl(WebDriver driver, String pageUrl) {
 		driver.get(pageUrl);
@@ -115,15 +119,15 @@ public class BasePage {
 	
 	//function with Element
 	
-	public By getByXpath(String xpathLocator) {
+	private By getByXpath(String xpathLocator) {
 		return By.xpath(xpathLocator);
 	}
 	
-	public WebElement getWebElement(WebDriver driver, String xpathLocator) {
+	private WebElement getWebElement(WebDriver driver, String xpathLocator) {
 		return driver.findElement(getByXpath(xpathLocator));
 	}
 	
-	public List<WebElement> getListWebElement(WebDriver driver, String xpathLocator) {
+	private List<WebElement> getListWebElement(WebDriver driver, String xpathLocator) {
 		return driver.findElements(By.xpath(xpathLocator));
 	}
 	
@@ -137,8 +141,8 @@ public class BasePage {
 		element.sendKeys(textValue);
 	}
 	
-	public void gerElementText(WebDriver driver, String xpathLocator) {
-		getWebElement(driver,xpathLocator).getText();
+	public String getElementText(WebDriver driver, String xpathLocator) {
+		return getWebElement(driver,xpathLocator).getText();
 	}
 	
 	public void selectItemInDefaultDropdown(WebDriver driver, String xpathLocator, String textItem) {
