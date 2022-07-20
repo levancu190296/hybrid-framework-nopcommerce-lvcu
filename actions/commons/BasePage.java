@@ -2,6 +2,7 @@
 package commons;
 
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 import org.openqa.selenium.Alert;
@@ -339,6 +340,8 @@ public class BasePage {
 	private long longTimeout = 30;
 	
 	private long shortTimeout = 5;
+	
+
 }
 
 
