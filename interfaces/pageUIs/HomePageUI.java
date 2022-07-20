@@ -1,7 +1,5 @@
 package pageUIs;
 
-import org.openqa.selenium.WebDriver;
-
 public class HomePageUI {
 	//static: để áp dụng cho homepageobject mà ko cần khởi tạo
 	//final: không cho phép gán lại giá trị, vì nó là cố định

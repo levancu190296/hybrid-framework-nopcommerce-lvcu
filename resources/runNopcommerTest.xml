@@ -6,9 +6,5 @@
 		<classes>
 			<class name="com.nopcommerce.user.Level_03_Page_Object"/>
 		</classes>
-  	</test>
-
- 
- 
-  	 
+  	</test>	 
 </suite >

@@ -2,19 +2,17 @@
 package pageObjects;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.server.handler.GetElementText;
 
 import commons.BasePage;
 import pageUIs.RegisterPageUI;
 
 public class RegisterPageObject extends BasePage {
 	private WebDriver driver;
-	
+
 	public RegisterPageObject(WebDriver driver) {
-		// bien local, dung this để lấy biến global ra
 		this.driver = driver;
 	}
-	
+
 	public void clickToRegisterButton() {
 		waitForElementClickable(driver,RegisterPageUI.REGISTER_BUTTON);
 		clickToElement(driver,RegisterPageUI.REGISTER_BUTTON);		
