@@ -27,7 +27,7 @@ public class Topic_11_Array_Practise {
 	}
 	
 	public void TC_02_Sum_first_And_Last() {
-		for (int i = 0; i < arrayNumber.length; i++) {
+		for (int i = 0; i < arrayNumber.length;) {
 			int sum = arrayNumber[0] + arrayNumber[arrayNumber.length-1];
 			System.out.println("sum is: "+ sum );
 			break;

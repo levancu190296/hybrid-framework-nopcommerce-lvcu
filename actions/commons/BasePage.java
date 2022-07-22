@@ -2,7 +2,6 @@
 package commons;
 
 import java.util.List;
-import java.util.Random;
 import java.util.Set;
 
 import org.openqa.selenium.Alert;
@@ -181,7 +180,7 @@ public class BasePage {
 		sleepInSecond(1);
 	}
 	
-	protected void sleepInSecond (long second) {
+	public void sleepInSecond (long second) {
 		try {
 			Thread.sleep(second * 1000);
 		} catch (InterruptedException e) {
@@ -340,7 +339,7 @@ public class BasePage {
 	
 	private long longTimeout = 30;
 	
-	private long shortTimeout = 5;
+	//private long shortTimeout = 5;
 	
 
 }

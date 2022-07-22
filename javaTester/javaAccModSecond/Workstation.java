@@ -1,7 +1,6 @@
 package javaAccModSecond;
 
 import javaAccModFirst.Computer;
-import javaAccModFirst.Student;
 
 public class Workstation extends Computer {
 	public void setramName() {

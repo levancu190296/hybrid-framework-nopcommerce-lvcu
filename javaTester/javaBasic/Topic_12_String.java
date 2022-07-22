@@ -2,9 +2,7 @@ package javaBasic;
 
 import java.util.Scanner;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 
@@ -73,10 +71,10 @@ public class Topic_12_String {
 		//dai dien cho 1 chuoi: %s
 		//%b %t %d
 		
-		String dymamicButtonXpath = "//button[@id='%s']";	
-		System.out.println("click Login"+ dymamicButtonXpath.format(dymamicButtonXpath, "login"));
-		System.out.println("click Search"+ dymamicButtonXpath.format(dymamicButtonXpath, "search"));
-		System.out.println("click Register"+ dymamicButtonXpath.format(dymamicButtonXpath, "register"));
+		//String dymamicButtonXpath = "//button[@id='%s']";	
+		//System.out.println("click Login"+ dymamicButtonXpath.format(dymamicButtonXpath, "login"));
+		//System.out.println("click Search"+ dymamicButtonXpath.format(dymamicButtonXpath, "search"));
+		//System.out.println("click Register"+ dymamicButtonXpath.format(dymamicButtonXpath, "register"));
 	}
 
 }

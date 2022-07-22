@@ -3,8 +3,6 @@ package javaBasic;
 import java.io.InputStream;
 import java.util.Scanner;
 
-import org.testng.annotations.Test;
-
 public class Topic_04_Excercise {
 
     public static void main(String[] args) {

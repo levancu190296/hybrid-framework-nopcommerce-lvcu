@@ -8,7 +8,7 @@ public class Animal {
 	Animal animal;
 	public void showProperty() {
 		
-		System.out.println( );
+		System.out.println( name);
 	}
 	
 	

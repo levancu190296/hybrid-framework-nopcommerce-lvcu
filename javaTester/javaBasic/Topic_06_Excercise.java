@@ -1,6 +1,5 @@
 package javaBasic;
 
-import java.io.InputStream;
 import java.util.Scanner;
 
 import org.openqa.selenium.WebDriver;
