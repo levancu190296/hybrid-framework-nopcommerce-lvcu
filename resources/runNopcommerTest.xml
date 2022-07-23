@@ -3,8 +3,24 @@
 <suite name="NopCommerce">
   	
 	<test name="run on Firefox">
+	<parameter name="browser" value="firefox" ></parameter>
 		<classes>
-			<class name="com.nopcommerce.user.Level_03_Page_Object_02_Login"/>
+			<class name="com.nopcommerce.user.Level_04_Multiple_Browser"/>
 		</classes>
   	</test>	 
+  	
+	<test name="run on Chrome">
+	<parameter name="browser" value="chrome" ></parameter>
+		<classes>
+			<class name="com.nopcommerce.user.Level_04_Multiple_Browser"/>
+		</classes>
+  	</test>	 
+  	
+	<test name="run on Edge">
+	<parameter name="browser" value="edge" ></parameter>
+		<classes>
+			<class name="com.nopcommerce.user.Level_04_Multiple_Browser"/>
+		</classes>
+  	</test>	 
+  	
 </suite >
