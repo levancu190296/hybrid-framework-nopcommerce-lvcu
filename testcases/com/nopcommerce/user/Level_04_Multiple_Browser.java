@@ -26,11 +26,6 @@ public class Level_04_Multiple_Browser extends BaseTest{
 	public void beforeClass(String browserName) {
 
 		driver = getBrowserDriver(browserName);
-
-		
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		//open url: nó đang đứng trang homePage
-		driver.get("https://demo.nopcommerce.com/");
 		homepage = new HomePageObject(driver);
 		
 		firstName  = "le";

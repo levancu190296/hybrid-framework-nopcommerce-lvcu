@@ -1,6 +1,7 @@
 package commons;
 
 import java.sql.DriverManager;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -49,6 +50,8 @@ public class BaseTest {
 		}else {
 			throw new RuntimeException("Browser name invalid");
 		}
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.get("https://demo.nopcommerce.com/");
 		return driver;
 		// de truyen 1 version minh mon muon
 		//WebDriverManager.chromedriver().browserVersion("94.5.7").setup();

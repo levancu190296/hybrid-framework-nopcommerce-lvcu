@@ -8,16 +8,21 @@ import pageUIs.HomePageUI;
 public class HomePageObject extends BasePage{
 	//bien global
 	private WebDriver driver;
-	// ham khoi tao: cung ten vs class , k co kieu tra ve(constructor)
 	
+	// ham khoi tao: cung ten vs class , k co kieu tra ve(constructor)
 	public HomePageObject(WebDriver driver) {
 		// bien local, dung this để lấy biến global ra
 		this.driver = driver;
 	}
 	
-	public void clickToRegisterLink() {
+	public RegisterPageObject clickToRegisterLink() {
 		waitForElementClickable(driver,HomePageUI.REGISTER_LINK);
 		clickToElement(driver,HomePageUI.REGISTER_LINK);
+		//02
+		//return new RegisterPageObject(driver);
+		
+		//03
+		return PageGeneratorManager.getRegisterPage(driver);
 	}
 
 	public boolean isMyAccountDisplayed() {
@@ -25,14 +30,13 @@ public class HomePageObject extends BasePage{
 		return isElementDisplayed(driver, HomePageUI.MY_ACCOUNT_LINK);
 	}
 
-
-	public void clickToLoginLink() {
+	public LoginPageObject clickToLoginLink() {
 		waitForElementClickable(driver,HomePageUI.LOGIN_LINK);
 		clickToElement(driver,HomePageUI.LOGIN_LINK);
+		//02
+		//return new LoginPageObject(driver); 
 		
+		//03
+		return PageGeneratorManager.getLoginPage(driver);
 	}
-
-
-
-
 }
