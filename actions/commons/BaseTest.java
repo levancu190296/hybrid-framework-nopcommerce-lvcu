@@ -12,6 +12,8 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+
+
 public class BaseTest {
 	WebDriver driver;
 	private String projectPath=System.getProperty("user.dir");
