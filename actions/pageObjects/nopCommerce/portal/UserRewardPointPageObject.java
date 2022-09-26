@@ -1,14 +1,14 @@
-package pageObjects;
+package pageObjects.nopCommerce.portal;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.CustomerInforPageUI;
-import pageUIs.HomePageUI;
+import pageUIs.nopCommerce.user.CustomerInforPageUI;
+import pageUIs.nopCommerce.user.HomePageUI;
 
-public class RewardPointPageObject extends BasePage {
+public class UserRewardPointPageObject extends BasePage {
 	private WebDriver driver;
-	public RewardPointPageObject(WebDriver driver) {
+	public UserRewardPointPageObject(WebDriver driver) {
 		this.driver = driver;
 	}
 //	public boolean isMyAccountPageDisplayed() {

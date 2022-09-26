@@ -1,6 +1,7 @@
 // các hàm dùng chung cho PageObjects
 package commons;
 
+import java.sql.Driver;
 import java.util.List;
 import java.util.Set;
 
@@ -16,11 +17,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import pageObjects.AddressPageObject;
-import pageObjects.MyProductViewPageObject;
-import pageObjects.PageGeneratorManager;
-import pageObjects.RewardPointPageObject;
-import pageUIs.BasePageUI;
+import pageObjects.nopCommerce.portal.UserAddressPageObject;
+import pageObjects.nopCommerce.portal.UserHomePageObject;
+import pageObjects.nopCommerce.portal.UserMyProductViewPageObject;
+import pageObjects.nopCommerce.admin.AdminLoginPageObject;
+import pageObjects.nopCommerce.portal.PageGeneratorManager;
+import pageObjects.nopCommerce.portal.UserRewardPointPageObject;
+import pageUIs.nopCommerce.user.BasePageUI;
 
 public class BasePage {
 	
@@ -30,7 +33,7 @@ public class BasePage {
 	}
 	
 	///function with browser 
-	protected void openPageUrl(WebDriver driver, String pageUrl) {
+	public void openPageUrl(WebDriver driver, String pageUrl) {
 		driver.get(pageUrl);
 	}
 
@@ -269,6 +272,12 @@ public class BasePage {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("arguments[0].click();", getWebElement(driver, xpathLocator));
 	}
+	
+	protected WebElement getShadownDOM(WebDriver driver, String xpathLocator) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		WebElement element = (WebElement) jsExecutor.executeScript("arguments[0].shadowRoot();", getWebElement(driver, xpathLocator));
+		return element;
+	}
 
 	protected void scrollToElement(WebDriver driver, String xpathLocator) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
@@ -344,25 +353,37 @@ public class BasePage {
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(xpathLocator)));
 	}
 	
-	public AddressPageObject openAddressPage(WebDriver driver) {
+	public UserAddressPageObject openAddressPage(WebDriver driver) {
 		waitForElementClickable(driver, BasePageUI.ADDRESS_LINK);
 		clickToElement(driver, BasePageUI.ADDRESS_LINK);
-		return PageGeneratorManager.getAddressPage(driver);
+		return PageGeneratorManager.getUserAddressPage(driver);
 	}
 	
-	public RewardPointPageObject openRewardPointPage(WebDriver driver) {
+	public UserRewardPointPageObject openRewardPointPage(WebDriver driver) {
 		waitForElementClickable(driver, BasePageUI.REWARD_LINK);
 		clickToElement(driver, BasePageUI.REWARD_LINK);
-		return PageGeneratorManager.getRewardPointPage(driver);
+		return PageGeneratorManager.getUserRewardPointPage(driver);
 	}
 	
-	public MyProductViewPageObject openMyProductViewPage(WebDriver driver) {
+	public UserMyProductViewPageObject openMyProductViewPage(WebDriver driver) {
 		waitForElementClickable(driver, BasePageUI.MY_PRODUCT_LINK);
 		clickToElement(driver, BasePageUI.MY_PRODUCT_LINK);
-		return PageGeneratorManager.getMyProductViewPage(driver);
+		return PageGeneratorManager.getUserMyProductViewPage(driver);
 	}
 	
-	
+	public UserHomePageObject clickToLogoutLinkAtUserPage(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.LOGOUT_LINK_AT_USER);
+		clickToElement(driver, BasePageUI.LOGOUT_LINK_AT_USER);
+		return PageGeneratorManager.getUserHomePage(driver);
+		
+	}
+	public AdminLoginPageObject clickToLogoutLinkAtAdminPage(WebDriver driver) {
+		waitForElementClickable(driver, BasePageUI.LOGOUT_LINK_AT_USER);
+		clickToElement(driver, BasePageUI.LOGOUT_LINK_AT_USER);
+		return PageGeneratorManager.getAdminLoginPage(driver);
+		
+	}
+
 	
 	private long longTimeout = 30;
 	

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import commons.BasePageFactory;
 import net.bytebuddy.dynamic.loading.ClassInjector.UsingInstrumentation;
-import pageUIs.RegisterPageUI;
+import pageUIs.nopCommerce.user.RegisterPageUI;
 
 public class RegisterPageObject extends BasePageFactory {
 

@@ -10,18 +10,18 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import commons.BaseTest;
-import pageObjects.HomePageObject;
-import pageObjects.LoginPageObject;
-import pageObjects.CustomerInforPageObject;
-import pageObjects.PageGeneratorManager;
-import pageObjects.RegisterPageObject;
+import pageObjects.nopCommerce.portal.UserCustomerInforPageObject;
+import pageObjects.nopCommerce.portal.UserHomePageObject;
+import pageObjects.nopCommerce.portal.UserLoginPageObject;
+import pageObjects.nopCommerce.portal.PageGeneratorManager;
+import pageObjects.nopCommerce.portal.UserRegisterPageObject;
 
 public class Level_06_Page_Generator_Manager_03 extends BaseTest{
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = getBrowserDriver(browserName);
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 	
 		firstName  = "le";
 	    lastName = "cu";
@@ -109,7 +109,7 @@ public class Level_06_Page_Generator_Manager_03 extends BaseTest{
 		
 		Assert.assertTrue(homePage.isMyAccountDisplayed());
 		
-		accountPage = homePage.clicktoMyAccountLink();
+		accountPage = homePage.openMyAccountPage();
 		// thuc hien cac action tiep theo: verify firstname,lastname..v.v.
 		
 	}
@@ -128,9 +128,9 @@ public class Level_06_Page_Generator_Manager_03 extends BaseTest{
 	//###################-START-DECLARE-######################
 	private WebDriver driver;
 	private String lastName,firstName,invalidEmail,notFoundEmail,existingEmail,validPassword,incorrectPassword;
-	private RegisterPageObject registerPage ;
-	private HomePageObject homePage ;
-	private LoginPageObject loginPage;
-	private CustomerInforPageObject accountPage;
+	private UserRegisterPageObject registerPage ;
+	private UserHomePageObject homePage ;
+	private UserLoginPageObject loginPage;
+	private UserCustomerInforPageObject accountPage;
 	//###################-END-DECLARE-######################
 }

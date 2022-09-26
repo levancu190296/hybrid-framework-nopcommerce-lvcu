@@ -1,4 +1,4 @@
-package pageUIs;
+package pageUIs.nopCommerce.user;
 
 public class LoginPageUI {
 	//static: để áp dụng cho homepageobject mà ko cần khởi tạo
