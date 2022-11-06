@@ -3,29 +3,26 @@
 <suite parallel="false" name="Facebook">
   	
   	<parameter name="server" value="TESTING"></parameter>
- 
- 
-  	
   	<test name="run on chrome browser">
   		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="tech.Topic_06_Multiple_Serser"/>
+			<class name="com.nopcommerce.user.Level_09_Dynamic_Locator"/>
 		</classes>
   	</test>
   	
-	<test name="run on FIREFOX browser">
-  		<parameter name="browser" value="firefox" />
-		<classes>
-			<class name="tech.Topic_06_Multiple_Serser"/>
-		</classes>
-  	</test>
+<!-- 	<test name="run on FIREFOX browser"> -->
+<!--   		<parameter name="browser" value="firefox" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="tech.Topic_06_Multiple_Serser"/> -->
+<!-- 		</classes> -->
+<!--   	</test> -->
   	
-  	<test name="run on EDGE browser">
-  		<parameter name="browser" value="edge" />
-		<classes>
-			<class name="tech.Topic_06_Multiple_Serser"/>
-		</classes>
-  	</test>
+<!--   	<test name="run on EDGE browser"> -->
+<!--   		<parameter name="browser" value="edge" /> -->
+<!-- 		<classes> -->
+<!-- 			<class name="tech.Topic_06_Multiple_Serser"/> -->
+<!-- 		</classes> -->
+<!--   	</test> -->
  
  
   	 

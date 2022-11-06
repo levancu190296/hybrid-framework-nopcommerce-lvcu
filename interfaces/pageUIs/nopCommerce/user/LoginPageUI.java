@@ -7,12 +7,12 @@ public class LoginPageUI {
 	// convention: VIÊT HOA, và phân cách bằng gạch dưới
 	
 
-	public static final String EMAIL_TEXTBOX="//div/input[@name='Email']";
-	public static final String PASSWORD_TEXTBOX="//div/input[@name='Password']";
-	public static final String LOGIN_BUTTON="//div/button[@type='submit']";
-	public static final String EMAIL_ERROR_MESSAGE="//span[@id='Email-error']";
-	//public static final String EMAIL_ERROR_NOT_FOUND_MESSAGE="//a[@class='ico-login']";
-	public static final String EMAIL_ERROR_NOT_FOUND_MESSAGE="//div[@class='message-error validation-summary-errors']";
+	public static final String EMAIL_TEXTBOX="xpath=//div/input[@name='Email']";
+	public static final String PASSWORD_TEXTBOX="xpath=//div/input[@name='Password']";
+	public static final String LOGIN_BUTTON="xpath=//div/button[@type='submit']";
+	public static final String EMAIL_ERROR_MESSAGE="xpath=//span[@id='Email-error']";
+	//public static final String EMAIL_ERROR_NOT_FOUND_MESSAGE="xpath=//a[@class='ico-login']";
+	public static final String EMAIL_ERROR_NOT_FOUND_MESSAGE="xpath=//div[@class='message-error validation-summary-errors']";
 
 	
 

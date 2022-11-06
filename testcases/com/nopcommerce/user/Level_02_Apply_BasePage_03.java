@@ -50,21 +50,22 @@ public class Level_02_Apply_BasePage_03 extends BasePage {
 	
 	@Test
 	public void TC_01_Register_Empty_Data() {
-		waitForElementClickable(driver, "//li//a[text()='Register']");
-		clickToElement(driver, "//li//a[text()='Register']");
 		
-		waitForElementClickable(driver, "//div//button[@id='register-button']");
-		clickToElement(driver, "//div//button[@id='register-button']");
+		waitForElementClickable(driver, "xpath=//li//a[text()='Register']");
+		clickToElement(driver, "xpath=//li//a[text()='Register']");
 		
-		Assert.assertEquals(getElementText(driver,"//span[@id='FirstName-error']"), "First name is required.");
-		Assert.assertEquals( getElementText(driver,"//span[@id='LastName-error']"), "Last name is required.");
-		Assert.assertEquals( getElementText(driver,"//span[@id='Email-error']"), "Email is required.");
-		Assert.assertEquals( getElementText(driver,"//span[@id='Password-error']"), "Password is required.");
-		Assert.assertEquals( getElementText(driver,"//span[@id='ConfirmPassword-error']"), "Password is required.");
+		waitForElementClickable(driver, "xpath=//div//button[@id='register-button']");
+		clickToElement(driver, "xpath=//div//button[@id='register-button']");
+		
+		Assert.assertEquals(getElementText(driver,"xpath=//span[@id='FirstName-error']"), "First name is required.");
+		Assert.assertEquals( getElementText(driver,"xpath=//span[@id='LastName-error']"), "Last name is required.");
+		Assert.assertEquals( getElementText(driver,"xpath=//span[@id='Email-error']"), "Email is required.");
+		Assert.assertEquals( getElementText(driver,"xpath=//span[@id='Password-error']"), "Password is required.");
+		Assert.assertEquals( getElementText(driver,"xpath=//span[@id='ConfirmPassword-error']"), "Password is required.");
 		System.out.println(generateFakeNumber());
 	}
   
-	@Test
+	//@Test
 	public void TC_02_Register_Invalid_Email() {
 		 waitForElementClickable(driver, "//li//a[text()='Register']");
 		 clickToElement(driver, "//li//a[text()='Register']");
@@ -82,7 +83,7 @@ public class Level_02_Apply_BasePage_03 extends BasePage {
 	  
 	}
 	
-	@Test
+	//@Test
 	public void TC_03_Register_Success() {
 		 
 		 waitForElementClickable(driver, "//li//a[text()='Register']");
@@ -104,7 +105,7 @@ public class Level_02_Apply_BasePage_03 extends BasePage {
 	  
 	}
   
-	@Test
+	//@Test
 	public void TC_04_Register_Existing_Email() {
 		 waitForElementClickable(driver, "//li//a[text()='Register']");
 		 clickToElement(driver, "//li//a[text()='Register']");
@@ -122,7 +123,7 @@ public class Level_02_Apply_BasePage_03 extends BasePage {
 	  
 	}
 	
-	@Test
+	//@Test
 	public void TC_05_Register_Password_Less_Than_6_Chars() {
 		 waitForElementClickable(driver, "//li//a[text()='Register']");
 		 clickToElement(driver, "//li//a[text()='Register']");
@@ -141,7 +142,7 @@ public class Level_02_Apply_BasePage_03 extends BasePage {
 	  
 	}
   
-	@Test
+	//@Test
 	public void TC_06_Register_Invalid_Confirm_Password() {
 		 waitForElementClickable(driver, "//li//a[text()='Register']");
 		 clickToElement(driver, "//li//a[text()='Register']");

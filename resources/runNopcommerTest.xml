@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
 <suite name="NopCommerce">
   	
-  	<parameter name="environment" value="DEV"/>
-	<test name="run on Firefox">
-		<parameter name="browser" value="firefox" ></parameter>
-		<classes>
-			<class name="com.nopcommerce.user.Level_08_Switch_Role"/>
-		</classes>
-  	</test>	 
-  	
+<!--   	<parameter name="environment" value="DEV"></parameter> -->
 <!-- 	<test name="run on  Chrome"> -->
 <!-- 		<parameter name="browser" value="chrome" ></parameter> -->
 <!-- 		<classes> -->
-<!-- 			<class name="com.nopcommerce.user.Level_05_Page_Factory"/> -->
+<!-- 			<class name="com.nopcommerce.user.Level_09_Dynamic_Locator"/> -->
+<!-- 		</classes> -->
+<!--   	</test>	  -->
+  	
+<!-- 	<test name="run on Firefox"> -->
+<!-- 		<parameter name="browser" value="firefox" ></parameter> -->
+<!-- 		<classes> -->
+<!-- 			<class name="com.nopcommerce.user.Level_09_Dynamic_Locator"/> -->
 <!-- 		</classes> -->
 <!--   	</test>	  -->
   	
@@ -23,6 +24,7 @@
 <!-- 			<class name="com.nopcommerce.user.Level_05_Page_Factory"/> -->
 <!-- 		</classes> -->
 <!--   	</test>	  -->
+
 
   	
 </suite >
