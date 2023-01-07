@@ -45,6 +45,8 @@ public class Level_07_Switch_Page extends BaseTest{
 		homePage = registerPage.clickToLogout();
 	}
 	
+	
+	
 	@Test
 	public void User_02_Login() {
 		loginPage = homePage.clickToLoginLink();

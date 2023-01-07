@@ -8,6 +8,10 @@ public class Car_Procedure_Oriented_Programe {
 	static Float mileAge;
 	static Double carPrice; 
 	
+	enum Browser{
+		CHROME,FRIREFOX,IE;
+	}
+	
 	public static void main(String[] args) {
 		carCompany ="Honda";
 		carType="City";

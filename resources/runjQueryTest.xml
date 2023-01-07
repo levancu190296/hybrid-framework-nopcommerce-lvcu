@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="NopCommerce">
+  	
+  	<parameter name="url" value="https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/"></parameter>
+	<test name="run on  Chrome">
+		<parameter name="browser" value="chrome" ></parameter>
+		<classes>
+			<class name="com.jquery.database.Level_10_DataTable_DataGrid"/>
+		</classes>
+  	</test>	   	
+</suite >

@@ -3,13 +3,13 @@
 
 <suite name="NopCommerce">
   	
-<!--   	<parameter name="environment" value="DEV"></parameter> -->
-<!-- 	<test name="run on  Chrome"> -->
-<!-- 		<parameter name="browser" value="chrome" ></parameter> -->
-<!-- 		<classes> -->
-<!-- 			<class name="com.nopcommerce.user.Level_09_Dynamic_Locator"/> -->
-<!-- 		</classes> -->
-<!--   	</test>	  -->
+  	<parameter name="environment" value="DEV"></parameter>
+	<test name="run on  Chrome">
+		<parameter name="browser" value="chrome" ></parameter>
+		<classes>
+			<class name="com.nopcommerce.user.Level_09_Dynamic_Locator"/>
+		</classes>
+  	</test>	 
   	
 <!-- 	<test name="run on Firefox"> -->
 <!-- 		<parameter name="browser" value="firefox" ></parameter> -->
