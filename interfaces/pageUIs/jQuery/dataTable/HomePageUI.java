@@ -1,4 +1,4 @@
-package pageUIs.jQuery;
+package pageUIs.jQuery.dataTable;
 
 public class HomePageUI {
 	public static final String PAGINATION_PAGE_BY_NUMBER="xpath=//li[@class='qgrd-pagination-page']/a[text()='%s']";
@@ -9,12 +9,16 @@ public class HomePageUI {
 	public static final String ROW_OF_PAGE = "xpath=//tbody/tr";
 	public static final String ROW_Country_OF_PAGE = "xpath=//tr/td[@data-key='country']";
 	
-	//index cot minhf can enter/click/select
+	//index cot minh can enter/click/select
 	public static final String COLUMN_INDEX_BY_NAME="xpath=//tr/th[text()='%s']/preceding-sibling::th";
 	
 	//senkey
 	public static final String ROW_TEXBOX_BY_COLUMN_INDEX_AND_ROW_INDEX="xpath=//tbody/tr[%s]/td[%s]/input";
 	
 	public static final String DROPDOWM_BY_COLUMN_INDEX_AND_ROW_INDEX="xpath=//tbody/tr[1]/td[4]/div/select";
+	
+	public static final String CHECKBOX_BY_COLUMN_INDEX_AND_ROW_INDEX="xpath=//tbody//tr[%s]//td[%s]//input[@type='checkbox']";
+	
+	public static final String ICON_BY_ROW_NUMBER ="xpath=//tbody/tr[%s]//button[@title='%s']//i";
 	
 }

@@ -1,6 +1,6 @@
 package pageUIs.nopCommerce.user;
 
-public class BasePageUI {
+public class BasePageNopCommerceUI {
 	public static final String ADDRESS_LINK    = "xpath=//div[@class='listbox']//a[text()='Addresses']";
 	public static final String REWARD_LINK     = "xpath=//div[@class='listbox']//a[text()='Reward points']";
 	public static final String MY_PRODUCT_LINK = "xpath=//div[@class='listbox']//a[text()='My product reviews']";

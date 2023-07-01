@@ -3,6 +3,9 @@ package javaBasic;
 import java.util.Scanner;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+import commons.GlobalConstants;
 
 
 
@@ -21,6 +24,19 @@ public class Topic_11_Array {
 	public void display() {
 		System.out.println("name: " + name);
 		System.out.println("age: "+age);
+	}
+	
+	@Test
+	public void TC_08() {
+		String fileNames [] = {"IU.jpg","jennie.jpg"};
+		String filepath = GlobalConstants.UPLOAD_FILE;
+		
+		String fullFileName = "";
+		for( String file : fileNames) {
+			fullFileName = fullFileName + filepath + file + "\n";
+		}
+		fullFileName  = fullFileName.trim();
+		System.out.println(fullFileName);
 	}
 	
 	public static void main(String[] args) {

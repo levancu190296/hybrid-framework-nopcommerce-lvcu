@@ -3,11 +3,15 @@
 
 <suite name="NopCommerce">
   	
+  	<!-- Link for test case 4 -->
   	<parameter name="url" value="https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/"></parameter>
 	<test name="run on  Chrome">
 		<parameter name="browser" value="chrome" ></parameter>
 		<classes>
-			<class name="com.jquery.database.Level_10_DataTable_DataGrid"/>
+			<class name="com.jquery.Level_10_DataTable_DataGrid"/>
 		</classes>
   	</test>	   	
 </suite >
+
+
+<!--   	https://www.jqueryscript.net/demo/CRUD-Data-Grid-Plugin-jQuery-Quickgrid/  tc1,2,3 -->

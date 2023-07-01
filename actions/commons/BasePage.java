@@ -29,7 +29,8 @@ import pageObjects.nopCommerce.portal.UserMyProductViewPageObject;
 import pageObjects.nopCommerce.admin.AdminLoginPageObject;
 import pageObjects.nopCommerce.portal.PageGeneratorManager;
 import pageObjects.nopCommerce.portal.UserRewardPointPageObject;
-import pageUIs.nopCommerce.user.BasePageUI;
+import pageUIs.jQuery.uploadFile.BasePageJQueryUI;
+import pageUIs.nopCommerce.user.BasePageNopCommerceUI;
 
 public class BasePage {
 
@@ -149,7 +150,7 @@ public class BasePage {
 	private By getByLocator(String locatorType) {
 		By by = null;
 
-		System.out.println("locator type is: " + locatorType);
+		//System.out.println("locator type is: " + locatorType);
 
 		if (locatorType.startsWith("id=") || locatorType.startsWith("Id=") || locatorType.startsWith("ID=")) {
 			by = By.id(locatorType.substring(3));
@@ -173,15 +174,15 @@ public class BasePage {
 	// neu trong TH truyen vao locator type = Xpath : hoat dong bt
 	// locator type khac Xpath thi sai (chỉ xpath work with text %s)
 	private String getDynamicXpath(String locatorType, String... dynamicValues) {
-		System.out.println("locator type before:" + locatorType);
+		//System.out.println("locator type before:" + locatorType);
 		if (locatorType.startsWith("xpath=") || locatorType.startsWith("Xpath=") || locatorType.startsWith("XPATH=")) {
 			locatorType = String.format(locatorType, (Object[]) dynamicValues);
 		}
 		for (String values : dynamicValues) {
 			
-			System.out.println("locator type" + values);
+			//System.out.println("locator type" + values);
 		}
-		System.out.println("locator type after:" + locatorType);
+		//System.out.println("locator type after:" + locatorType);
 		return locatorType;
 	}
 
@@ -306,15 +307,31 @@ public class BasePage {
 		return getListWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).size();
 	}
 
-	protected void checkToDefaultCheckBoxRadio(WebDriver driver, String locatorType) {
+	protected void checkToDefaultCheckBoxorRadio(WebDriver driver, String locatorType) {
 		WebElement element = getWebElement(driver, locatorType);
 		if (!element.isSelected()) {
 			element.click();
 		}
 	}
+	
+	//dymamic
+	protected void checkToDefaultCheckBoxorRadio(WebDriver driver, String locatorType,String...dynamicValues) {
+		WebElement element = getWebElement(driver, getDynamicXpath(locatorType, dynamicValues));
+		if (!element.isSelected()) {
+			element.click();
+		}
+	}
 
-	protected void uncheckToDefaultCheckBoxRadio(WebDriver driver, String locatorType) {
+	protected void uncheckToDefaultCheckBoxorRadio(WebDriver driver, String locatorType) {
 		WebElement element = getWebElement(driver, locatorType);
+		if (element.isSelected()) {
+			element.click();
+		}
+	}
+	
+	//dynamic
+	protected void uncheckToDefaultCheckBoxorRadio(WebDriver driver, String locatorType,String ...dynamicValues) {
+		WebElement element = getWebElement(driver, getDynamicXpath(locatorType, dynamicValues));
 		if (element.isSelected()) {
 			element.click();
 		}
@@ -345,6 +362,9 @@ public class BasePage {
 		driver.switchTo().defaultContent();
 	}
 
+	
+	
+	//thu vien action
 	protected void hoverMouseToElement(WebDriver driver, String locatorType) {
 		Actions action = new Actions(driver);
 		action.moveToElement(getWebElement(driver, locatorType)).perform();
@@ -434,7 +454,7 @@ public class BasePage {
 				getWebElement(driver, locatorType));
 	}
 
-	protected boolean isImageLoaded(WebDriver driver, String locatorType) {
+	public boolean isImageLoaded(WebDriver driver, String locatorType) {
 		JavascriptExecutor jsExecutor = ((JavascriptExecutor) driver);
 		boolean status = (boolean) jsExecutor.executeScript(
 				"return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",
@@ -444,6 +464,15 @@ public class BasePage {
 		} else {
 			return false;
 		}
+	}
+	
+	//dynamic
+	public boolean isImageLoaded(WebDriver driver,String locatorType,String ...dynamicValues) {
+		JavascriptExecutor jsExecutor = ((JavascriptExecutor) driver);
+		boolean status = (boolean) jsExecutor.executeScript(
+				"return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",
+				getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)));
+		return status;
 	}
 
 	protected void waitForElementVisible(WebDriver driver, String locatorType) {
@@ -505,32 +534,47 @@ public class BasePage {
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
 	}
 
+	public void uploadMutipleFiles(WebDriver driver, String... fileNames) {
+		//duong dan thu muc upload file (win.mac.linux)
+		String filepath = GlobalConstants.UPLOAD_FILE;
+		//đường dẫn của tất cả các file
+		//1 file
+		// nhiều file: String fileNames [] = {"IU.jpg","jennie.jpg"};
+		String fullFileName = " ";
+		for( String file : fileNames) {
+			fullFileName = fullFileName + filepath + file + "\n";
+		}
+		fullFileName  = fullFileName.trim();
+		getWebElement(driver,BasePageJQueryUI.UPLOAD_FILE).sendKeys(fullFileName);
+	}
+	
+	
 	// toi uu o bài switch page 07
 	// page 1
 	public UserAddressPageObject openAddressPage(WebDriver driver) {
-		waitForElementClickable(driver, BasePageUI.ADDRESS_LINK);
-		clickToElement(driver, BasePageUI.ADDRESS_LINK);
+		waitForElementClickable(driver, BasePageNopCommerceUI.ADDRESS_LINK);
+		clickToElement(driver, BasePageNopCommerceUI.ADDRESS_LINK);
 		return PageGeneratorManager.getUserAddressPage(driver);
 	}
 
 	// page 2
 	public UserRewardPointPageObject openRewardPointPage(WebDriver driver) {
-		waitForElementClickable(driver, BasePageUI.REWARD_LINK);
-		clickToElement(driver, BasePageUI.REWARD_LINK);
+		waitForElementClickable(driver, BasePageNopCommerceUI.REWARD_LINK);
+		clickToElement(driver, BasePageNopCommerceUI.REWARD_LINK);
 		return PageGeneratorManager.getUserRewardPointPage(driver);
 	}
 
 	// page 3
 	public UserMyProductViewPageObject openMyProductViewPage(WebDriver driver) {
-		waitForElementClickable(driver, BasePageUI.MY_PRODUCT_LINK);
-		clickToElement(driver, BasePageUI.MY_PRODUCT_LINK);
+		waitForElementClickable(driver, BasePageNopCommerceUI.MY_PRODUCT_LINK);
+		clickToElement(driver, BasePageNopCommerceUI.MY_PRODUCT_LINK);
 		return PageGeneratorManager.getUserMyProductViewPage(driver);
 	}
 
 	// toi uu ở bài học 09 dynamic locator
 	public BasePage openPageAtAccountByName(WebDriver driver, String pageName) {
-		waitForElementClickable(driver, BasePageUI.DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA, pageName);
-		clickToElement(driver, BasePageUI.DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA, pageName);
+		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA, pageName);
+		clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA, pageName);
 		switch (pageName) {
 		case "Addresses":
 			return PageGeneratorManager.getUserAddressPage(driver);
@@ -545,22 +589,22 @@ public class BasePage {
 
 	// xữ lý nhiều page >10 page, ko sử dụng swith case
 	public void openPageAtAccountByName_02(WebDriver driver, String pageName) {
-		waitForElementClickable(driver, BasePageUI.DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA, pageName);
-		clickToElement(driver, BasePageUI.DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA, pageName);
+		waitForElementClickable(driver, BasePageNopCommerceUI.DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA, pageName);
+		clickToElement(driver, BasePageNopCommerceUI.DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA, pageName);
 
 	}
 
 	// level 08 switch role
 	public UserHomePageObject clickToLogoutLinkAtUserPage(WebDriver driver) {
-		waitForElementClickable(driver, BasePageUI.LOGOUT_LINK_AT_USER);
-		clickToElement(driver, BasePageUI.LOGOUT_LINK_AT_USER);
+		waitForElementClickable(driver, BasePageNopCommerceUI.LOGOUT_LINK_AT_USER);
+		clickToElement(driver, BasePageNopCommerceUI.LOGOUT_LINK_AT_USER);
 		return PageGeneratorManager.getUserHomePage(driver);
 
 	}
 
 	public AdminLoginPageObject clickToLogoutLinkAtAdminPage(WebDriver driver) {
-		waitForElementClickable(driver, BasePageUI.LOGOUT_LINK_AT_USER);
-		clickToElement(driver, BasePageUI.LOGOUT_LINK_AT_USER);
+		waitForElementClickable(driver, BasePageNopCommerceUI.LOGOUT_LINK_AT_USER);
+		clickToElement(driver, BasePageNopCommerceUI.LOGOUT_LINK_AT_USER);
 		return PageGeneratorManager.getAdminLoginPage(driver);
 
 	}

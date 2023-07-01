@@ -32,7 +32,6 @@
 	<classpathentry kind="lib" path="libWebDriverManager/jackson-databind-2.10.3.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManager/commons-compress-1.21.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManager/commons-exec-1.3.jar"/>
-	<classpathentry kind="lib" path="libWebDriverManager/commons-io-2.6.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManager/byte-buddy-1.8.15.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManager/bcprov-jdk15on-1.64.jar"/>
 	<classpathentry kind="lib" path="libWebDriverManager/bcpkix-jdk15on-1.64.jar"/>
