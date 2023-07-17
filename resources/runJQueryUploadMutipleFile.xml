@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="NopCommerce">
+  	
+  	<parameter name="url" value="https://blueimp.github.io/jQuery-File-Upload/"></parameter>
+	<test name="run on  Chrome">
+		<parameter name="browser" value="chrome" ></parameter>
+		<classes>
+			<class name="com.jquery.Level_11_Upload_File"/>
+		</classes>
+  	</test>	   	
+</suite >
+
+

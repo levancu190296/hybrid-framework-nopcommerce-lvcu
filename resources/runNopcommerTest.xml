@@ -7,7 +7,7 @@
 	<test name="run on  Chrome">
 		<parameter name="browser" value="chrome" ></parameter>
 		<classes>
-			<class name="com.nopcommerce.user.Level_09_Dynamic_Locator"/>
+			<class name="com.jquery.Level_11_Upload_File"/>
 		</classes>
   	</test>	 
   	

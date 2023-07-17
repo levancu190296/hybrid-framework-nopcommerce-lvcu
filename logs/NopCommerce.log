@@ -1,0 +1,46 @@
+[INFO ] [2023-04-26 04:16:02,984] step 01 - load single file
+[INFO ] [2023-04-26 04:16:03,041] step 02 - verify loaded success
+[INFO ] [2023-04-26 04:16:03,165] step 03 - click to start button
+[INFO ] [2023-04-26 04:16:04,219] Verify single file link uploaded success
+[INFO ] [2023-04-26 04:16:04,770] step 04 - Verify image uploaded success
+[INFO ] [2023-04-26 04:18:53,227] step 01 - load single file
+[INFO ] [2023-04-26 04:18:53,276] step 02 - verify loaded success
+[INFO ] [2023-04-26 04:18:53,399] step 03 - click to start button
+[INFO ] [2023-04-26 04:18:54,449] Verify single file link uploaded success
+[INFO ] [2023-04-26 04:18:54,987] step 04 - Verify image uploaded success
+[INFO ] [2023-04-26 04:19:28,070] step 01 - load single file
+[INFO ] [2023-04-26 04:19:28,116] step 02 - verify loaded success
+[INFO ] [2023-04-26 04:19:28,228] step 03 - click to start button
+[INFO ] [2023-04-26 04:19:29,280] step 04 - Verify single file link uploaded success
+[INFO ] [2023-04-26 04:19:29,835] step 05 - Verify image uploaded success
+[INFO ] [2023-04-27 00:06:56,341] step 01 - load single file
+[INFO ] [2023-04-27 00:06:56,385] step 02 - verify loaded success
+[INFO ] [2023-04-27 00:06:56,498] step 03 - click to start button
+[INFO ] [2023-04-27 00:06:57,552] step 04 - Verify single file link uploaded success
+[INFO ] [2023-04-27 00:06:58,277] step 05 - Verify image uploaded success
+[INFO ] [2023-05-01 00:54:30,611] step 01 - load single file
+[INFO ] [2023-05-01 00:54:30,656] step 02 - verify loaded success
+[INFO ] [2023-05-01 00:54:30,768] step 03 - click to start button
+[INFO ] [2023-05-01 00:54:31,817] step 04 - Verify single file link uploaded success
+[INFO ] [2023-05-01 00:54:32,350] step 05 - Verify image uploaded success
+[INFO ] [2023-05-01 00:54:49,009] step 01 - load single file
+[INFO ] [2023-05-01 00:54:49,053] step 02 - verify loaded success
+[INFO ] [2023-05-01 00:54:49,164] step 03 - click to start button
+[INFO ] [2023-05-01 00:54:50,216] step 04 - Verify single file link uploaded success
+[INFO ] [2023-05-01 00:54:50,734] step 05 - Verify image uploaded success
+[INFO ] [2023-05-01 00:56:44,201] step 01 - load single file
+[INFO ] [2023-05-01 00:56:44,256] step 02 - verify loaded success
+[INFO ] [2023-05-01 00:56:44,369] step 03 - click to start button
+[INFO ] [2023-05-01 00:56:45,429] step 04 - Verify single file link uploaded success
+[INFO ] [2023-05-01 00:56:45,924] step 05 - Verify image uploaded success
+[INFO ] [2023-07-18 00:07:10,286] step 01 - load single file
+[INFO ] [2023-07-18 00:08:20,606] step 01 - load single file
+[INFO ] [2023-07-18 00:08:20,650] step 02 - verify loaded success
+[INFO ] [2023-07-18 00:08:20,793] step 03 - click to start button
+[INFO ] [2023-07-18 00:08:21,845] step 04 - Verify single file link uploaded success
+[INFO ] [2023-07-18 00:08:22,338] step 05 - Verify image uploaded success
+[2023-07-18 00:17:45,627] step 01 - load single file
+[2023-07-18 00:17:45,669] step 02 - verify loaded success
+[2023-07-18 00:17:45,749] step 03 - click to start button
+[2023-07-18 00:17:46,790] step 04 - Verify single file link uploaded success
+[2023-07-18 00:17:47,244] step 05 - Verify image uploaded success

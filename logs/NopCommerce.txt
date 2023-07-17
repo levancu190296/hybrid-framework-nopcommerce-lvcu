@@ -1,0 +1,5 @@
+[2023-07-18 00:17:45,627] step 01 - load single file
+[2023-07-18 00:17:45,669] step 02 - verify loaded success
+[2023-07-18 00:17:45,749] step 03 - click to start button
+[2023-07-18 00:17:46,790] step 04 - Verify single file link uploaded success
+[2023-07-18 00:17:47,244] step 05 - Verify image uploaded success
